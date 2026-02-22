@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Amica | AI Companion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <aside id="sidebar">
+            <div class="logo">Amica</div>
+            <nav>
+                <button class="nav-btn active" data-view="chat">Chat</button>
+                <button class="nav-btn" data-view="persona">Persona</button>
+                <button class="nav-btn" data-view="memory">Memory Bank</button>
+            </nav>
+            <div class="status-indicator">
+                <span class="dot"></span> Emotional Sync: High
+            </div>
+        </aside>
+
+        <main id="main-content">
+            <!-- Chat View -->
+            <section id="chat-view" class="view">
+                <header>
+                    <h2 id="active-persona-name">Amica</h2>
+                    <p id="active-persona-desc">Your supportive companion</p>
+                </header>
+                <div id="chat-messages"></div>
+                <div class="input-area">
+                    <textarea id="user-input" placeholder="Type a message..." rows="1"></textarea>
+                    <button id="send-btn">Send</button>
+                </div>
+            </section>
+
+            <!-- Persona View -->
+            <section id="persona-view" class="view hidden">
+                <h2>Persona Settings</h2>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="p-name" value="Amica">
+                </div>
+                <div class="form-group">
+                    <label>Trait</label>
+                    <select id="p-trait">
+                        <option value="empathetic">Empathetic & Warm</option>
+                        <option value="intellectual">Intellectual & Curious</option>
+                        <option value="playful">Playful & Witty</option>
+                        <option value="stoic">Stoic & Calm</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Speaking Style</label>
+                    <textarea id="p-style" placeholder="How should they talk?">Soft spoken, uses gentle language, and asks follow-up questions about feelings.</textarea>
+                </div>
+                <button id="save-persona" class="primary-btn">Update Persona</button>
+            </section>
+
+            <!-- Memory View -->
+            <section id="memory-view" class="view hidden">
+                <h2>Persistent Memory (RAG)</h2>
+                <p class="hint">Key facts Amica has learned about you.</p>
+                <ul id="memory-list"></ul>
+                <button id="clear-memory" class="secondary-btn">Wipe Memories</button>
+            </section>
+        </main>
+    </div>
+    <script src="persona.js"></script>
+    <script src="memory.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
